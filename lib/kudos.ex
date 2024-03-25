@@ -15,7 +15,7 @@ defmodule Kudos do
       219
 
       iex> Kudos.generate(true) |> String.length()
-      19050
+      19093
 
   """
   def generate(include_dev_deps \\ false) do

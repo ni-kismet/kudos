@@ -33,7 +33,7 @@ jobs:
       - run: mix format --check-formatted
         if: ${{ matrix.lint }}
 
-      - run: mix test
+      - run: MIX_ENV=dev mix test
 
       - run: mix kudos.generate
 

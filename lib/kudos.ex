@@ -15,7 +15,7 @@ defmodule Kudos do
       219
 
       iex> Kudos.generate(true) |> String.length()
-      19050
+      19093
 
   """
   def generate(include_dev_deps \\ false) do
@@ -99,7 +99,7 @@ defmodule Kudos do
   end
 
   defp load_deps_meta_data(include_dev_deps) do
-    Mix.Dep.load_on_environment([])
+    Mix.Dep.load_and_cache()
     |> Enum.map(fn dep ->
       Mix.Dep.in_dependency(dep, fn _ ->
         case is_umbrella?(dep) do
